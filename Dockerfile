@@ -28,5 +28,9 @@ RUN rm /etc/apache2/sites-available/000-default.conf
 ADD 000-default.conf /etc/apache2/sites-available/
 RUN rm /etc/php/7.0/apache2/php.ini
 ADD php.ini /etc/php/7.0/apache2/php.ini
+RUN rm /nextcloud/nextcloud/.user.ini
+ADD user.ini /nextcloud/nextcloud/.user.ini
+RUN rm /nextcloud/nextcloud/.htaccess
+ADD htaccess /nextcloud/nextcloud/.htaccess
 
 CMD ["/nextcloud/startup.sh"]
